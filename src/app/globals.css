@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-prompt), sans-serif;
+  }
+  body {
+    @apply bg-white text-dark antialiased;
+  }
+}
+
+/* Custom Scrollbar & Utilities */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
