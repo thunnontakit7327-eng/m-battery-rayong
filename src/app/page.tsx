@@ -211,7 +211,7 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 10: ปุ่มโทรค้างด้านล่างบนมือถือ (Sticky Call Bar) */}
-        <PhoneCallButton />
+        <PhoneCallButton phoneNumber="095-292-6881" displayNumber="โทรเรียกช่างด่วน 095-292-6881" />
       </main>
     </>
   );
