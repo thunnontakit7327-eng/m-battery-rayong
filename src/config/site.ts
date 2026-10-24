@@ -7,7 +7,7 @@ export const siteConfig = {
   address: "บริเวณสามแยกหมวดทางหลวงเชิงเนิน อำเภอเมืองระยอง จังหวัดระยอง 21000",
   addressShort: "สามแยกหมวดทางหลวงเชิงเนิน อ.เมือง ระยอง",
   openingHours: "ทุกวัน 07:30–19:00 น.",
-  googleMapsUrl: "https://www.google.com/maps/dir/?api=1&destination=%E0%B8%AD%E0%B8%B5%E0%B8%A1%E0%B9%81%E0%B8%9A%E0%B8%95%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%B5%E0%B9%88+%E0%B8%A3%E0%B8%B0%E0%B8%A8%E0%B8%AD%E0%B8%87",
+  googleMapsUrl: "https://maps.app.goo.gl/y6bqYhecCGSq194f7",
   placeId: "ChIJO3W5-X1v1DQRV3Xv3Xv3Xv3",
   brands: ["GS", "FB", "3K", "BOSCH", "AMARON", "PUMA", "MF"],
   features: [
