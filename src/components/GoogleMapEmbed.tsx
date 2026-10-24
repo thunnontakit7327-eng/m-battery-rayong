@@ -5,7 +5,6 @@ import { siteConfig } from '@/config/site';
 
 export default function GoogleMapEmbed() {
   const [loaded, setLoaded] = useState(false);
-  const placeId = process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || 'ChIJgaQrBwD9AjERhuaGGPSVUvw';
 
   return (
     <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-inner border border-gray-200 relative min-h-[350px] flex flex-col items-center justify-center">
@@ -35,7 +34,7 @@ export default function GoogleMapEmbed() {
 
       <iframe
         title="M Battery Rayong Map"
-        src={`https://www.google.com/maps?q=place_id:${placeId}&output=embed`}
+        src="https://www.google.com/maps?q=Sam+Yaek+Muad+Tang+Luang+Choeng+Noen+Sukhumvit+Road+Rayong&z=18&output=embed"
         width="100%"
         height="400"
         style={{ border: 0 }}
