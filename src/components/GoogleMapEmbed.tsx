@@ -34,7 +34,7 @@ export default function GoogleMapEmbed() {
 
       <iframe
         title="M Battery Rayong Map"
-        src="https://maps.app.goo.gl/eM7DwKT4RiSYSjRM7"
+        src="https://www.google.com/maps?q=M+Battery+Rayong+Rayong&output=embed"
         width="100%"
         height="400"
         style={{ border: 0 }}
