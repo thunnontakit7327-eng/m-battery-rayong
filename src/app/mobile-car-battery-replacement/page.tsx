@@ -12,7 +12,7 @@ export default function MobileServicePage() {
     <div className="container mx-auto px-4 py-12 max-w-4xl space-y-12">
       <div className="text-center">
         <span className="bg-primary/20 text-dark font-bold px-4 py-1.5 rounded-full text-sm inline-block mb-4">
-          บริการฉุกเฉิน 24 ชม. / นอกสถานที่
+          ถึงใน 15 นาที / นอกสถานที่ 07:30–19:00 น.
         </span>
         <h1 className="text-3xl md:text-5xl font-extrabold text-dark mb-6">
           บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ ระยอง

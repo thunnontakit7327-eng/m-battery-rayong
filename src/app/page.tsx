@@ -6,62 +6,20 @@ import { siteConfig } from '@/config/site';
 import { Phone, MapPin, Clock, ShieldCheck, Wrench, Battery } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'เอ็มแบตเตอรี่ ระยอง | ร้านแบตเตอรี่รถยนต์ เปลี่ยนแบตเตอรี่นอกสถานที่ด่วน 24 ชม.',
-  description: 'ร้านเอ็มแบตเตอรี่ ระยอง บริเวณสามแยกหมวดทางหลวงเชิงเนิน บริการจำหน่ายและเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ระยอง ด่วนถึงที่ภายใน 30 นาที โทร 095-292-6881',
+  title: 'เอ็มแบตเตอรี่ ระยอง | ร้านแบตเตอรี่รถยนต์ เปลี่ยนแบตเตอรี่นอกสถานที่ ถึงใน 15 นาที',
+  description: 'ร้านเอ็มแบตเตอรี่ ระยอง บริเวณสามแยกหมวดทางหลวงเชิงเนิน บริการจำหน่ายและเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ในระยอง ถึงใน 15 นาที เปิดทุกวัน 07:30–19:00 น. โทร 095-292-6881',
 };
 
 export default function HomePage() {
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'AutomotiveBusiness',
-    name: siteConfig.name,
-    image: `${siteConfig.url}/images/gallery/storefront-main.jpg`,
-    '@id': siteConfig.url,
-    url: siteConfig.url,
-    telephone: siteConfig.phone,
-    priceRange: '$$',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'สามแยกหมวดทางหลวงเชิงเนิน ถนนสุขุมวิท ต.เชิงเนิน',
-      addressLocality: 'เมืองระยอง',
-      addressRegion: 'ระยอง',
-      postalCode: '21000',
-      addressCountry: 'TH',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 12.681,
-      longitude: 101.281,
-    },
-    openingHoursSpecification: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: [
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday',
-        'Sunday',
-      ],
-      opens: '00:00',
-      closes: '23:59',
-    },
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-
-      <main className="min-h-screen pb-20 md:pb-0">
+      {/* ข้อมูลร้านสำหรับ Google (JSON-LD) อยู่ใน layout.tsx ชุดเดียว */}
+      <div className="min-h-screen pb-20 md:pb-0">
         {/* SECTION 1: Hero Banner */}
         <section className="bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white py-16 md:py-24 border-b border-amber-400/30">
           <div className="container mx-auto px-4 max-w-5xl text-center space-y-6">
             <span className="bg-amber-400 text-black font-extrabold px-4 py-1.5 rounded-full text-xs md:text-sm inline-block shadow-md">
-              ร้านแบตเตอรี่ระยอง บริการด่วนถึงที่ใน 30 นาที
+              ร้านแบตเตอรี่ระยอง บริการด่วนถึงที่ใน 15 นาที
             </span>
             <h1 className="text-4xl md:text-6xl font-black text-amber-400 leading-tight">
               เอ็มแบตเตอรี่ ระยอง
@@ -96,8 +54,8 @@ export default function HomePage() {
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex items-start gap-4">
               <Clock className="w-10 h-10 text-amber-500 shrink-0" />
               <div>
-                <h3 className="font-bold text-gray-900 text-lg">รวดเร็วถึงใน 30 นาที</h3>
-                <p className="text-gray-600 text-sm mt-1">ทีมช่างแสตนบายพร้อมออกให้บริการฉุกเฉินทั่วระยอง</p>
+                <h3 className="font-bold text-gray-900 text-lg">รวดเร็วถึงใน 15 นาที</h3>
+                <p className="text-gray-600 text-sm mt-1">ทีมช่างพร้อมออกให้บริการทั่วระยอง ทุกวัน 07:30–19:00 น.</p>
               </div>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex items-start gap-4">
@@ -198,13 +156,14 @@ export default function HomePage() {
             <p className="text-gray-300 text-sm">สามแยกหมวดทางหลวงเชิงเนิน ถนนสุขุมวิท เมืองระยอง</p>
             <div className="aspect-[16/9] max-w-3xl mx-auto rounded-2xl overflow-hidden border border-gray-700 shadow-xl">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8!2d101.281!3d12.681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDQwJzUxLjYiTiAxMDHCsDE2JzUxLjYiRQ!5e0!3m2!1sth!2sth!4v1700000000000"
+                src={siteConfig.mapEmbedUrl}
+                title="แผนที่ร้าน เอ็มแบตเตอรี่ ระยอง"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
               ></iframe>
             </div>
           </div>
@@ -212,7 +171,7 @@ export default function HomePage() {
 
         {/* SECTION 10: ปุ่มโทรค้างด้านล่างบนมือถือ (Sticky Call Bar) */}
         <PhoneCallButton phoneNumber="095-292-6881" displayNumber="โทรเรียกช่างด่วน 095-292-6881" />
-      </main>
+      </div>
     </>
   );
 }
