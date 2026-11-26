@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import PhoneCallButton from '@/components/PhoneCallButton';
 import StoreGallery from '@/components/StoreGallery';
 import GoogleReviews from '@/components/GoogleReviews';
 import { siteConfig } from '@/config/site';
@@ -19,7 +18,7 @@ export default function HomePage() {
   return (
     <>
       {/* ข้อมูลร้านสำหรับ Google (JSON-LD) อยู่ใน layout.tsx ชุดเดียว */}
-      <div className="min-h-screen pb-20 md:pb-0">
+      <div className="min-h-screen">
         {/* SECTION 1: Hero Banner — รูปช่างทำงานจริงเป็นพื้นหลัง */}
         <section className="relative isolate overflow-hidden bg-black text-white">
           <Image
@@ -206,8 +205,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SECTION 10: ปุ่มโทรค้างด้านล่างบนมือถือ (Sticky Call Bar) */}
-        <PhoneCallButton phoneNumber="095-292-6881" displayNumber="โทรเรียกช่างด่วน 095-292-6881" />
       </div>
     </>
   );
