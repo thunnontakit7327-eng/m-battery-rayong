@@ -9,7 +9,7 @@ export default function MobileStickyBar() {
         className="flex-1 bg-primary hover:bg-primary-hover text-dark font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-base shadow-md active:scale-95 transition-transform touch-target"
       >
         <Phone className="w-5 h-5 fill-dark animate-bounce" />
-        <span>โทรเรียกช่างด่วน</span>
+        <span className="whitespace-nowrap">โทรเรียกช่าง</span>
       </a>
       <a
         href={siteConfig.googleMapsUrl}

@@ -4,6 +4,8 @@ import StoreGallery from '@/components/StoreGallery';
 import GoogleReviews from '@/components/GoogleReviews';
 import { siteConfig } from '@/config/site';
 import Image from 'next/image';
+import Link from 'next/link';
+import { serviceAreas } from '@/config/areas';
 import GoogleRatingBadge from '@/components/GoogleRatingBadge';
 import { Phone, MapPin, Clock, ShieldCheck, Wrench, Battery, CalendarDays, PhoneCall, BadgeCheck, Truck } from 'lucide-react';
 
@@ -153,6 +155,17 @@ export default function HomePage() {
             <p className="text-gray-600 text-sm max-w-2xl mx-auto">
               ครอบคลุมพื้นที่ อ.เมืองระยอง, เชิงเนิน, ทับมา, เนินพระ, มาบตาพุด, ปากน้ำระยอง, บ้านฉาง และพื้นที่ใกล้เคียง
             </p>
+            <div className="flex flex-wrap justify-center gap-3 pt-2">
+              {serviceAreas.map((a) => (
+                <Link
+                  key={a.slug}
+                  href={`/service-areas/${a.slug}`}
+                  className="bg-white border border-gray-200 hover:border-amber-400 rounded-full px-5 py-2.5 text-sm font-bold text-gray-900 shadow-sm"
+                >
+                  เปลี่ยนแบตเตอรี่ {a.short}
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 

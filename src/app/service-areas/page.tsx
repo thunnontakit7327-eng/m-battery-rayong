@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { MapPin, Phone } from 'lucide-react';
+import Link from 'next/link';
 import { siteConfig } from '@/config/site';
+import { serviceAreas } from '@/config/areas';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/service-areas' },
@@ -33,6 +35,25 @@ export default function ServiceAreasPage() {
         <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
           ร้านเอ็มแบตเตอรี่ ตั้งอยู่บริเวณสามแยกหมวดทางหลวงเชิงเนิน อำเภอเมืองระยอง พร้อมบริการจัดส่งและเปลี่ยนแบตเตอรี่นอกสถานที่ในพื้นที่ใกล้เคียงอย่างรวดเร็ว
         </p>
+      </div>
+
+      <div className="space-y-4">
+        <h2 className="text-2xl font-bold text-dark">พื้นที่ที่ลูกค้าเรียกใช้บริการบ่อย</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {serviceAreas.map((a) => (
+            <Link
+              key={a.slug}
+              href={`/service-areas/${a.slug}`}
+              className="group flex items-center justify-between gap-3 bg-dark text-white p-5 rounded-2xl hover:bg-dark-light transition-colors"
+            >
+              <span className="flex items-center gap-3">
+                <MapPin className="w-5 h-5 text-primary shrink-0" />
+                <span className="font-bold">เปลี่ยนแบตเตอรี่ {a.short}</span>
+              </span>
+              <span className="text-primary text-sm font-bold whitespace-nowrap group-hover:translate-x-1 transition-transform">ดูเพิ่ม →</span>
+            </Link>
+          ))}
+        </div>
       </div>
 
       <div className="bg-gray-50 border border-gray-200 rounded-3xl p-8">
