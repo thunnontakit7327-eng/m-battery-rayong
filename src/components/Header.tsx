@@ -11,10 +11,10 @@ export default function Header() {
             M
           </div>
           <div>
-            <span className="font-bold text-lg md:text-xl block leading-tight group-hover:text-primary transition-colors">
+            <span className="font-bold text-base sm:text-lg md:text-xl block leading-tight whitespace-nowrap group-hover:text-primary transition-colors">
               {siteConfig.name}
             </span>
-            <span className="text-xs text-gray-400 block">
+            <span className="text-xs text-gray-400 hidden sm:block">
               เปลี่ยนแบตเตอรี่รถยนต์ ระยอง
             </span>
           </div>
@@ -34,7 +34,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <a
             href={siteConfig.phoneHref}
-            className="bg-primary hover:bg-primary-hover text-dark font-bold px-4 py-2.5 rounded-lg flex items-center gap-2 shadow-lg transition-transform active:scale-95 touch-target"
+            className="bg-primary hover:bg-primary-hover text-dark font-bold px-3 sm:px-4 py-2.5 rounded-lg flex items-center gap-2 whitespace-nowrap text-sm sm:text-base shadow-lg transition-transform active:scale-95 touch-target"
             aria-label="โทรเรียกช่าง"
           >
             <Phone className="w-4 h-4 fill-dark" />

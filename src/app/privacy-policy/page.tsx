@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/privacy-policy' },
   title: 'นโยบายความเป็นส่วนตัว | เอ็มแบตเตอรี่ ระยอง',
   description: 'นโยบายความเป็นส่วนตัวและการคุ้มครองข้อมูลส่วนบุคคลของเว็บไซต์ เอ็มแบตเตอรี่ ระยอง',
 };

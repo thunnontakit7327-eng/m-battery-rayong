@@ -3,6 +3,7 @@ import { Phone, CheckCircle, Wrench, Clock, Zap } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/mobile-car-battery-replacement' },
   title: 'บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ ระยอง | เอ็มแบตเตอรี่',
   description: 'บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ในระยอง แบตหมด รถสตาร์ทไม่ติด ถึงบ้าน ที่ทำงาน หรือริมถนน โทร 095-292-6881 ฟรีค่าแรงติดตั้ง',
 };

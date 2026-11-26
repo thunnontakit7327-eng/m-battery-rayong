@@ -22,6 +22,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${article.title} | เอ็มแบตเตอรี่ ระยอง`,
     description: article.desc,
+    alternates: { canonical: `/articles/${article.slug}` },
+    openGraph: {
+      type: 'article',
+      title: article.title,
+      description: article.desc,
+      url: `/articles/${article.slug}`,
+      images: [{ url: '/images/og-cover.jpg', width: 1200, height: 630 }],
+    },
   };
 }
 
@@ -44,7 +52,7 @@ export default function ArticleDetailPage({ params }: PageProps) {
     },
     datePublished: article.updated,
     dateModified: article.updated,
-    mainEntityOfPage: `${siteConfig.url}/articles/${article.slug}/`,
+    mainEntityOfPage: `${siteConfig.url}/articles/${article.slug}`,
   };
 
   const faqSchema = article.faqs?.length

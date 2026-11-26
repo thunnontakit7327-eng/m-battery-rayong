@@ -3,6 +3,7 @@ import { Phone } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/car-batteries' },
   title: 'แบตเตอรี่รถยนต์ ระยอง | GS, FB, 3K, Bosch, Amaron - เอ็มแบตเตอรี่',
   description: 'จำหน่ายแบตเตอรี่รถยนต์ระยอง แบรนด์ชั้นนำ GS, FB, 3K, BOSCH, AMARON, PUMA พร้อมบริการเปลี่ยนถึงที่ ฟรีค่าแรง โทร 095-292-6881',
 };

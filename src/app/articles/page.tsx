@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { articlesList } from '@/config/articles';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/articles' },
   title: 'บทความสาระน่ารู้เกี่ยวกับแบตเตอรี่รถยนต์ | เอ็มแบตเตอรี่ ระยอง',
   description: 'รวมบทความ วิธีดูแลรักษาแบตเตอรี่รถยนต์ อาการแบตเสื่อม วิธีเลือกแบตเตอรี่รถยนต์ให้เหมาะกับรถคุณ จากเอ็มแบตเตอรี่ ระยอง',
 };

@@ -3,6 +3,7 @@ import { MapPin, Phone } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/service-areas' },
   title: 'พื้นที่ให้บริการเปลี่ยนแบตเตอรี่ระยอง | เอ็มแบตเตอรี่',
   description: 'เอ็มแบตเตอรี่ ระยอง บริการเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ครอบคลุมอำเภอเมืองระยอง สามแยกหมวดทางหลวงเชิงเนิน ทับมา เนินพระ และพื้นที่ใกล้เคียง',
 };

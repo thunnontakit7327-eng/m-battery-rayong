@@ -37,11 +37,13 @@ export const metadata: Metadata = {
     title: 'ร้านแบตเตอรี่ระยอง | เปลี่ยนแบตเตอรี่รถยนต์ถึงที่ - เอ็มแบตเตอรี่',
     description: 'เอ็มแบตเตอรี่ ระยอง บริการเปลี่ยนแบตเตอรี่รถยนต์ถึงที่และหน้าร้าน แบตหมด รถสตาร์ทไม่ติด โทร 095-292-6881',
     siteName: siteConfig.name,
+    images: [{ url: '/images/og-cover.jpg', width: 1200, height: 630, alt: 'หน้าร้าน เอ็มแบตเตอรี่ ระยอง' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'ร้านแบตเตอรี่ระยอง | เปลี่ยนแบตเตอรี่รถยนต์ถึงที่',
     description: 'บริการเปลี่ยนแบตเตอรี่รถยนต์ถึงที่และหน้าร้าน โทร 095-292-6881',
+    images: ['/images/og-cover.jpg'],
   },
   robots: {
     index: true,

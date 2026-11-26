@@ -3,6 +3,7 @@ import { Phone, MapPin, Clock, Navigation } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/contact' },
   title: 'ติดต่อ เอ็มแบตเตอรี่ ระยอง | ร้านแบตเตอรี่รถยนต์ใกล้ฉัน',
   description: 'ติดต่อ เอ็มแบตเตอรี่ ระยอง โทร 095-292-6881 บริการเปลี่ยนแบตเตอรี่รถยนต์ถึงที่และหน้าร้าน สามแยกหมวดทางหลวงเชิงเนิน เปิดทุกวัน 07:30-19:00 น.',
 };

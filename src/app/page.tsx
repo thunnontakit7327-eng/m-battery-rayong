@@ -3,10 +3,13 @@ import PhoneCallButton from '@/components/PhoneCallButton';
 import StoreGallery from '@/components/StoreGallery';
 import GoogleReviews from '@/components/GoogleReviews';
 import { siteConfig } from '@/config/site';
-import { Phone, MapPin, Clock, ShieldCheck, Wrench, Battery } from 'lucide-react';
+import Image from 'next/image';
+import GoogleRatingBadge from '@/components/GoogleRatingBadge';
+import { Phone, MapPin, Clock, ShieldCheck, Wrench, Battery, CalendarDays, PhoneCall, BadgeCheck, Truck } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'เอ็มแบตเตอรี่ ระยอง | ร้านแบตเตอรี่รถยนต์ เปลี่ยนแบตเตอรี่นอกสถานที่ ถึงใน 15 นาที',
+  alternates: { canonical: '/' },
   description: 'ร้านเอ็มแบตเตอรี่ ระยอง บริเวณสามแยกหมวดทางหลวงเชิงเนิน บริการจำหน่ายและเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ในระยอง ถึงใน 15 นาที เปิดทุกวัน 07:30–19:00 น. โทร 095-292-6881',
 };
 
@@ -15,64 +18,59 @@ export default function HomePage() {
     <>
       {/* ข้อมูลร้านสำหรับ Google (JSON-LD) อยู่ใน layout.tsx ชุดเดียว */}
       <div className="min-h-screen pb-20 md:pb-0">
-        {/* SECTION 1: Hero Banner */}
-        <section className="bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white py-16 md:py-24 border-b border-amber-400/30">
-          <div className="container mx-auto px-4 max-w-5xl text-center space-y-6">
-            <span className="bg-amber-400 text-black font-extrabold px-4 py-1.5 rounded-full text-xs md:text-sm inline-block shadow-md">
-              ร้านแบตเตอรี่ระยอง บริการด่วนถึงที่ใน 15 นาที
-            </span>
-            <h1 className="text-4xl md:text-6xl font-black text-amber-400 leading-tight">
-              เอ็มแบตเตอรี่ ระยอง
-            </h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              รถสตาร์ทไม่ติด แบตเตอรี่หมดกลางทาง บริการส่งและเปลี่ยนแบตเตอรี่รถยนต์นอกสถานที่ทั่วเมืองระยอง ฟรีค่าบริการ
-            </p>
-            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href={siteConfig.phoneHref}
-                className="w-full sm:w-auto bg-amber-400 hover:bg-amber-300 text-black font-black text-lg px-8 py-4 rounded-2xl shadow-xl transition-all active:scale-95 flex items-center justify-center gap-3"
-              >
-                <Phone className="w-6 h-6 fill-black" />
-                <span>โทรด่วน {siteConfig.phone}</span>
-              </a>
-              <a
-                href={siteConfig.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 text-amber-400 font-bold px-6 py-4 rounded-2xl border border-amber-400/30 flex items-center justify-center gap-2"
-              >
-                <MapPin className="w-5 h-5 text-amber-400" />
-                <span>นำทางมาที่ร้าน</span>
-              </a>
+        {/* SECTION 1: Hero Banner — รูปช่างทำงานจริงเป็นพื้นหลัง */}
+        <section className="relative isolate overflow-hidden bg-black text-white">
+          <Image
+            src="/images/gallery/store-4.jpg"
+            alt="ช่างเอ็มแบตเตอรี่ ระยอง กำลังเปลี่ยนแบตเตอรี่รถยนต์ให้ลูกค้า"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[center_35%] -z-20 opacity-60"
+          />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/75 to-black/30 md:bg-gradient-to-r md:from-black md:via-black/80 md:to-black/10" />
+          <div className="container mx-auto px-4 max-w-6xl pt-20 pb-16 md:py-28">
+            <div className="max-w-2xl space-y-5 text-center md:text-left">
+              <GoogleRatingBadge />
+              <h1 className="text-4xl md:text-6xl font-black leading-tight">
+                <span className="text-primary">เอ็มแบตเตอรี่ ระยอง</span>
+                <span className="block text-2xl md:text-4xl font-extrabold text-white mt-2">
+                  แบตหมด สตาร์ทไม่ติด <span className="text-primary whitespace-nowrap">ถึงใน 15 นาที</span>
+                </span>
+              </h1>
+              <p className="text-base md:text-xl text-gray-200 leading-relaxed">
+                ร้านแบตเตอรี่รถยนต์ สามแยกหมวดทางหลวงเชิงเนิน บริการเปลี่ยนแบตถึงที่ทั่วเมืองระยอง ฟรีค่าบริการ เปิดทุกวัน 07:30–19:00 น.
+              </p>
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center md:justify-start gap-3">
+                <a
+                  href={siteConfig.phoneHref}
+                  className="bg-primary hover:bg-primary-hover text-dark font-black text-lg px-8 py-4 rounded-2xl shadow-xl shadow-primary/20 transition-all active:scale-95 flex items-center justify-center gap-3"
+                >
+                  <Phone className="w-6 h-6 fill-dark" />
+                  <span>โทร {siteConfig.phone}</span>
+                </a>
+                <a
+                  href={siteConfig.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/10 hover:bg-white/20 backdrop-blur text-white font-bold px-6 py-4 rounded-2xl border border-white/25 flex items-center justify-center gap-2"
+                >
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <span>นำทางมาที่ร้าน</span>
+                </a>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* SECTION 2: จุดเด่นของร้าน */}
-        <section className="py-12 bg-gray-100">
-          <div className="container mx-auto px-4 max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex items-start gap-4">
-              <Clock className="w-10 h-10 text-amber-500 shrink-0" />
-              <div>
-                <h3 className="font-bold text-gray-900 text-lg">รวดเร็วถึงใน 15 นาที</h3>
-                <p className="text-gray-600 text-sm mt-1">ทีมช่างพร้อมออกให้บริการทั่วระยอง ทุกวัน 07:30–19:00 น.</p>
-              </div>
-            </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex items-start gap-4">
-              <ShieldCheck className="w-10 h-10 text-amber-500 shrink-0" />
-              <div>
-                <h3 className="font-bold text-gray-900 text-lg">แบตเตอรี่แท้ 100%</h3>
-                <p className="text-gray-600 text-sm mt-1">ใหม่สดจากโรงงาน พร้อมใบรับประกันจากศูนย์ 12-24 เดือน</p>
-              </div>
-            </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex items-start gap-4">
-              <Wrench className="w-10 h-10 text-amber-500 shrink-0" />
-              <div>
-                <h3 className="font-bold text-gray-900 text-lg">ตรวจเช็กระบบไฟฟรี</h3>
-                <p className="text-gray-600 text-sm mt-1">ตรวจวัดค่า CCA ไดชาร์จ ไดสตาร์ท ด้วยเครื่องมือมาตรฐาน</p>
-              </div>
-            </div>
-          </div>
+        {/* SECTION 2: แถบจุดเด่น */}
+        <section className="bg-primary text-dark">
+          <ul className="container mx-auto px-4 max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-3 py-5 text-sm md:text-base font-bold">
+            <li className="flex items-center gap-2"><Clock className="w-5 h-5 shrink-0" /> ถึงใน 15 นาที</li>
+            <li className="flex items-center gap-2"><ShieldCheck className="w-5 h-5 shrink-0" /> แบตแท้ มีใบรับประกัน</li>
+            <li className="flex items-center gap-2"><Wrench className="w-5 h-5 shrink-0" /> ตรวจระบบไฟฟรี</li>
+            <li className="flex items-center gap-2"><CalendarDays className="w-5 h-5 shrink-0" /> <span className="whitespace-nowrap">ทุกวัน 07:30–19:00</span></li>
+          </ul>
         </section>
 
         {/* SECTION 3: บริการเปลี่ยนแบตเตอรี่รถยนต์ */}
@@ -97,6 +95,32 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* SECTION 3.5: ขั้นตอนใช้บริการ */}
+        <section className="py-16 bg-gray-50 border-y border-gray-200">
+          <div className="container mx-auto px-4 max-w-5xl space-y-10">
+            <div className="text-center space-y-2">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">เรียกช่างง่ายๆ 3 ขั้นตอน</h2>
+              <p className="text-gray-600">ไม่ต้องลากรถ ไม่ต้องรอคิวอู่</p>
+            </div>
+            <ol className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { icon: PhoneCall, title: 'โทรแจ้งรุ่นรถและพิกัด', desc: 'บอกยี่ห้อ รุ่น ปีรถ และจุดที่รถจอดอยู่ แล้วส่งพิกัดให้ช่าง' },
+                { icon: BadgeCheck, title: 'แจ้งราคาก่อนออกเดินทาง', desc: 'ช่างแนะนำรุ่นแบตที่ตรงกับรถ และแจ้งราคาให้ตกลงก่อน' },
+                { icon: Truck, title: 'ถึงใน 15 นาที เปลี่ยนให้ทันที', desc: 'เปลี่ยนแบตพร้อมเช็กไดชาร์จและระบบไฟให้ก่อนกลับ' },
+              ].map((step, i) => (
+                <li key={step.title} className="relative bg-white rounded-2xl border border-gray-200 p-6 pt-8 shadow-sm">
+                  <span className="absolute -top-4 left-6 bg-dark text-primary font-black w-9 h-9 rounded-full flex items-center justify-center shadow">
+                    {i + 1}
+                  </span>
+                  <step.icon className="w-9 h-9 text-amber-500 mb-3" />
+                  <h3 className="font-bold text-lg text-gray-900">{step.title}</h3>
+                  <p className="text-gray-600 text-sm mt-1 leading-relaxed">{step.desc}</p>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
 
